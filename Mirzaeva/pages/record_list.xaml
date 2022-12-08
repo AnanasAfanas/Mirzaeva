@@ -1,0 +1,27 @@
+﻿<Page x:Class="Mirzaeva.pages.record_list"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Mirzaeva.pages"
+      mc:Ignorable="d" 
+       d:DesignHeight="450" d:DesignWidth="800"
+      Title="record_list">
+
+    <Grid Background="white">
+        <ScrollViewer>
+            <ListView Name="record_view_list" SelectionChanged="record_view_list_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding record_id}"/>
+                        <GridViewColumn Header="Услуга" DisplayMemberBinding="{Binding Service.service_name}"/>
+                        <GridViewColumn Header="Барбер" DisplayMemberBinding="{Binding Barber.barber_name}"/>
+                        <GridViewColumn Header="Клиент" DisplayMemberBinding="{Binding Clients.client_name}"/>
+                        <GridViewColumn Header="Дата и время записи" DisplayMemberBinding="{Binding reccord_date_and_time}"/>
+                        <GridViewColumn Header="Комментарий" DisplayMemberBinding="{Binding record_coment}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ScrollViewer>
+    </Grid>
+</Page>
